@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horus Guacamole</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="client color-change-5x">
+    <div class="login-ui">
+        <div class="login-logo">
+            <img src="horus_image.svg" alt="Horus">
+        </div>
+        
+        <div class="login-form">
+            <h1>Horus</h1>
+            
+            <div class="login-error">
+                Login falhou. Verifique suas credenciais e tente novamente.
+            </div>
+            
+            <form method="post" action="#" id="login-form">
+                <div class="login-fields">
+                    <div class="login-field">
+                        <label for="username">Nome de usuário</label>
+                        <input type="text" id="username" name="username" autofocus>
+                    </div>
+                    
+                    <div class="login-field">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                </div>
+                
+                <div class="buttons">
+                    <input type="submit" class="login-button" value="Login">
+                </div>
+            </form>
+        </div>
+        
+        <div class="copyright">
+            Copyright &copy; 2025 <a href="https://www.horusdm.com.br/">The Horus Software Foundation</a>
+        </div>
+        
+        <div class="version">v1.0.0</div>
+    </div>
+
+    <script>
+        // Script simples para demonstração
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === 'admin' && password === 'password') {
+                window.location.href = 'dashboard.html'; // Redireciona para o dashboard
+            } else {
+                document.querySelector('.login-form').classList.add('has-error');
+            }
+        });
+    </script>
+</body>
+</html>
